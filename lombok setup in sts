@@ -1,0 +1,26 @@
+Step1===============>:
+
+Project Lombok Maven
+Adding Lombok in your project is simple. Just add the below dependency in your maven project pom.xml file.
+
+<dependency>
+	<groupId>org.projectlombok</groupId>
+	<artifactId>lombok</artifactId>
+	<version>1.16.20</version>
+</dependency>
+
+Step2==================>:
+
+Adding the Lombok Plugin in IDE (Eclipse)
+Here are the installation steps for Windows:
+
+Downloaded jar from https://projectlombok.org/download or use the jar which is downloaded from your maven build.
+Execute command in terminal: java -jar lombok.jar
+This command will open window as show in the picture below, install and quit the installer and restart eclipse.
+
+Step3==================>:
+enable my own annotation processor by adding my jar file.
+Right click on the project and select Properties.
+Open Java Compiler -> Annotation Processing. Check "Enable annotation processing".
+Open Java Compiler -> Annotation Processing -> Factory Path. Check "Enable project specific settings". Add your JAR file to the list.
+Clean and build the project.

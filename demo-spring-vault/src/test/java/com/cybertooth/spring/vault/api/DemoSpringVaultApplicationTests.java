@@ -26,7 +26,7 @@ import lombok.NoArgsConstructor;
 public class DemoSpringVaultApplicationTests {
 
 	@Test
-	@Ignore
+	
 	public void contextLoads() {
 	}
 
