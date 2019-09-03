@@ -5,11 +5,7 @@ it will give output like  this
 ==> Vault server configuration:
 
              Api Address: http://127.0.0.1:8200
-                     Cgo: disabled
-         Cluster Address: https://127.0.0.1:8201
-              Listener 1: tcp (addr: "127.0.0.1:8200", cluster address: "127.0.0.1:8201", max_request_duration: "1m30s",
-              max_request_size: "33554432", tls: "disabled")
-               Log Level: info
+       ..............
                    Mlock: supported: false, enabled: false
                  Storage: inmem
                  Version: Vault v1.2.2
