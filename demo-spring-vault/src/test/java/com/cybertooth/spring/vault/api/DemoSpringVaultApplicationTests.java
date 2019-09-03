@@ -19,6 +19,7 @@ import org.springframework.vault.support.VaultResponseSupport;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -33,37 +34,30 @@ public class DemoSpringVaultApplicationTests {
 	public void vaultTest() throws URISyntaxException {
 		// 1client settings
 		// given
-
+		
 		// when
 		VaultTemplate template = new VaultTemplate(VaultEndpoint.from(new URI("http://127.0.0.1:8200")),
 				new TokenAuthentication("s.RdDe5L5hXMFApbFLk450PZRi"));
-
 		VaultResponse response = template.write("cubbyhole/admin", new AdminSecret("newUser1", "newPass1"));
 
 		// then
 		assertNull(response);
 		// when
 
-	VaultResponseSupport<AdminSecret> validResponse = template.read("cubbyhole/admin", AdminSecret.class);
+		VaultResponseSupport<AdminSecret> validResponse = template.read("cubbyhole/admin", AdminSecret.class);
 		// then
 		assertNotNull(validResponse.getData().getUsername());
 		assertNotNull(validResponse.getData().getPassword());
 
 	}
 
-
-@Data
+	@Data
+	@NoArgsConstructor
+	@AllArgsConstructor
 	public static class AdminSecret {
 		private String username;
 		private String password;
-		public AdminSecret() {}
-		public AdminSecret(String username, String password) {
-			super();
-			this.username = username;
-			this.password = password;
-		}
-		
-		
+
 	}
 
 }
