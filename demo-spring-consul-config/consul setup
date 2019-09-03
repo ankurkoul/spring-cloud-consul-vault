@@ -1,0 +1,18 @@
+consul; steup required
+
+step 1:download consul from offical website
+step2: from consul folder run server using 
+
+consul agent -server  -bootstrap-expect=1 -data-dir=consul-data -ui -bind=<IP address>
+
+now after running you can see consul info
+
+step 3:http://localhost:8500--->to access consul ui
+
+step 4:go to kv tab
+
+step5:  create key--->folder-name/application-name/my.username
+and provide value---->12345
+
+step5:if you update password you can see changes
+
